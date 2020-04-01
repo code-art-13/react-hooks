@@ -14,7 +14,7 @@ export default class ClassCounter extends PureComponent {
 
             this.setState(
                 function(state) {
-                    let newState = { counter: state.counter++}
+                    var newState = { counter: state.counter++ };
                     return newState;
                  }, 
                 function () {                        
