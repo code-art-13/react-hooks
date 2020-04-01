@@ -11,11 +11,18 @@ export default class ClassCounter extends PureComponent {
             counter: 0
         }
         this.increment = () => {
-            this.setState(prevState => {
-               return{ counter: prevState.counter++}
-            }, ()=>{
-                console.log('incremented counter to ' + this.state.counter)
-            })
+
+            this.setState(
+                { counter: 100 }, 
+                function () {                        
+                  console.log(this.state.counter); 
+                }
+              ); 
+            // this.setState(prevState => {
+            //    return{ counter: prevState.counter++}
+            // }, ()=>{
+            //     console.log('incremented counter to ' + this.state.counter)
+            // })
         }
         this.decrement = () => {
             this.setState(prevState => {
