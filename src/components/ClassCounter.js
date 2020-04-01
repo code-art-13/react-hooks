@@ -13,12 +13,17 @@ export default class ClassCounter extends Component {
         this.increment = () => {
             this.setState(prevState => {
                return{ counter: prevState.counter++}
+            }, ()=>{
+                console.log('incremented counter to ' + this.state.counter)
             })
         }
         this.decrement = () => {
             this.setState(prevState => {
                 return{ counter: prevState.counter--}
-             })
+             },
+             ()=>{
+                console.log('incremented counter to ' + this.state.counter)
+            })
         }
         log('constructor')
     }
