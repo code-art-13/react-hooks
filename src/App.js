@@ -1,17 +1,24 @@
-import React from 'react';
+import React, {Component} from 'react';
 import './App.css';
 import { ClassCounter, FunctionalCounter } from './components'
 
-function App() {
-  return (
-    <div>
-      <h1>
-        Welcome !
-      </h1>
-      <ClassCounter />
-      {/* <FunctionalCounter /> */}
-    </div>
-  );
+export default class App extends Component {
+  constructor(){
+    super()
+    this.state = {
+      showClassCounter: true,
+    }
+    this.toggleShowClassCounter = () => {
+      this.setState((state) => ({...state, ...{showClassCounter: !state.showClassCounter}}))
+  }
+  }
+  render() {
+    return (
+      <div>
+        <button onClick={this.toggleShowClassCounter}><h1>{this.state.showClassCounter? 'Hide': 'Show'} Class Counter</h1></button>
+        {this.state.showClassCounter && <ClassCounter />}
+      </div>
+    )
+  }
 }
 
-export default App;
