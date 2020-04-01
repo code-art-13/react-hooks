@@ -28,12 +28,12 @@ export default class ClassCounter extends Component {
     componentDidUpdate() {
         log('componentDidUpdate')
     }
-    shouldComponentUpdate(nextProps, nextState){
-        if(nextState.counter !== this.state.counter) {
-            return true
-        }
-        return false
-    }
+    // shouldComponentUpdate(nextProps, nextState){
+    //     if(nextState.counter !== this.state.counter) {
+    //         return true
+    //     }
+    //     return false
+    // }
     render() {
         log("render")
         return (
