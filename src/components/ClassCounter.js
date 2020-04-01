@@ -4,7 +4,7 @@ const log = (message) => {
     console.log(`${message} ${i}`);
     i++;
 }
-export default class ClassCounter extends Component {
+export default class ClassCounter extends PureComponent {
     constructor(props) {
         super(props)
         this.state = {
