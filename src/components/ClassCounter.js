@@ -1,4 +1,4 @@
-import React, { Component,PureComponent } from 'react'
+import React, { Component, PureComponent } from 'react'
 let i = 0;
 const log = (message) => {
     console.log(`${message} ${i}`);
@@ -12,28 +12,14 @@ export default class ClassCounter extends PureComponent {
         }
         this.increment = () => {
 
-            this.setState(
-                function(state) {
-                    var o = { counter: state.counter + 1 };
-                    return { counter: state.counter + 1 };
-                 }, 
-                function () {                        
-                  console.log(this.state.counter); 
-                }
-              ); 
-            // this.setState(prevState => {
-            //    return{ counter: prevState.counter++}
-            // }, ()=>{
-            //     console.log('incremented counter to ' + this.state.counter)
-            // })
+            this.setState(state => ({ counter: state.counter + 1 }),
+                () => console.log('incremented counter to ' + this.state.counter)
+            );
         }
         this.decrement = () => {
-            this.setState(prevState => {
-                return{ counter: prevState.counter--}
-             },
-             ()=>{
-                console.log('incremented counter to ' + this.state.counter)
-            })
+            this.setState(state => ({ counter: state.counter - 1 }),
+                () => console.log('decremented counter to ' + this.state.counter)
+            );
         }
         log('constructor')
     }
